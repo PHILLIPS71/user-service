@@ -15,5 +15,5 @@
       "generated/type-graphql": ["../prisma/generated/type-graphql"]
     }
   },
-  "include": ["**/*.ts", "../prisma/generated/**/*.ts"]
+  "include": ["**/*.ts", "../prisma/generated/**/*.ts", "../grpc/**/*.ts"]
 }

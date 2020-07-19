@@ -4,7 +4,20 @@ package user;
 
 service UserService {
   rpc findOne (UserWhereUniqueInput) returns (User) {}
-  rpc findMany (UserWhereInput) returns (stream User) {}
+  rpc findMany (UserWhereInput) returns (UserList) {}
+  rpc update (UserUpdateInput) returns (User) {}
+}
+
+message User {
+  string id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+  bool is_verified = 5;
+}
+
+message UserList {
+  repeated User users = 1;
 }
 
 message UserWhereUniqueInput {
@@ -15,17 +28,23 @@ message UserWhereUniqueInput {
 }
 
 message UserWhereInput {
-  string id = 1;
-  string email = 2;
-  string first_name = 3;
-  string last_name = 4;
-  bool is_verified = 5;
+  oneof input {
+    string first_name = 1;
+    string last_name = 2;
+    bool is_verified = 3;
+  }
 }
 
-message User {
-  string id = 1;
-  string first_name = 2;
-  string last_name = 3;
-  string email = 4;
-  bool is_verified = 5;
+message UserUpdateInput {
+  oneof where {
+    string id = 1;
+    string email = 2;
+  }
+
+  oneof input {
+    string first_name = 4;
+    string last_name = 5;
+    string avatar = 6;
+    bool is_verified = 7;
+  }
 }

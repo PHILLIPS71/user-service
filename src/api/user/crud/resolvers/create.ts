@@ -1,4 +1,5 @@
-import { CreateUserArgs, User } from 'generated/type-graphql'
+import { CreateUserArgs } from 'generated/type-graphql'
+import { User } from '@prisma/client'
 import { hash } from 'services/argon'
 import Context from 'interfaces/Context'
 

@@ -4,12 +4,13 @@ import { ApolloServer } from 'apollo-server-koa'
 import schema from 'api'
 import Koa, { Context } from 'koa'
 import _ from 'lodash'
+import 'protobuf/user-service'
 
 class Application {
   private readonly ip: string
   private readonly port: number
   private readonly koa: Koa
-  private readonly prisma: PrismaClient
+  public readonly prisma: PrismaClient
 
   constructor(ip: string, port: number) {
     this.ip = ip
