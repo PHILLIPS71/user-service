@@ -27,7 +27,6 @@ const handler: UserServiceHandlers = {
   },
 
   async findMany(call, callback) {
-    console.log(call.request)
     const users = await application.prisma.user.findMany({
       where: {
         first_name: call.request?.first_name,
@@ -36,7 +35,6 @@ const handler: UserServiceHandlers = {
       },
     })
 
-    console.log(users)
     callback(null, { users: users })
   },
 

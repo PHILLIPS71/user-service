@@ -1,10 +1,11 @@
 import 'reflect-metadata'
 import { PrismaClient } from '@prisma/client'
 import { ApolloServer } from 'apollo-server-koa'
-import schema from 'api'
 import Koa, { Context } from 'koa'
+import schema from 'api'
 import _ from 'lodash'
 import 'protobuf/user-service'
+import 'protobuf/auth-service'
 
 class Application {
   private readonly ip: string
