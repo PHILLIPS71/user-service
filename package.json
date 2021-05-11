@@ -18,7 +18,7 @@
     "graphql-fields": "^2.0.3",
     "graphql-type-json": "^0.3.2",
     "koa": "^2.13.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.0.0-rc.3"
   },
